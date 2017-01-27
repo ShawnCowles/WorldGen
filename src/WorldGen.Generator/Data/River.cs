@@ -42,7 +42,7 @@ namespace WorldGen.Generator.Data
 
             var segment = new RiverSegment(this, location, previousSegments);
 
-            this.Segments.Add(segment);
+            Segments.Add(segment);
 
             if (previousSegment != null)
             {

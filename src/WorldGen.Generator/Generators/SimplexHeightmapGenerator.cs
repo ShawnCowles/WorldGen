@@ -98,7 +98,7 @@ namespace WorldGen.Generator.Generators
             {
                 for (int y = 0; y < world.Height; y++)
                 {
-                    world.GetCell(x, y).Height = (int) (world.MaxElevation * noiseMap[x, y] * biasMap[x, y]);
+                    world.GetCell(x, y).Height = world.MaxElevation * noiseMap[x, y] * biasMap[x, y];
                 }
             }
         }

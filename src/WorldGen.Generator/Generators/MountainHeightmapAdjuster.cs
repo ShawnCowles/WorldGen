@@ -32,18 +32,16 @@ namespace WorldGen.Generator.Generators
                 for(int y = 0; y < world.Height; y++)
                 {
                     var cell = world.GetCell(x, y);
-                    var rawHeight = cell.Height / (float)world.MaxElevation;
+                    var rawHeight = cell.Height / world.MaxElevation;
 
-                    world.GetCell(x, y).Height = (int)(
-                        world.MaxElevation
-                        * ApplyMountainAdjustment(rawHeight, world));
+                    world.GetCell(x, y).Height = world.MaxElevation * ApplyMountainAdjustment(rawHeight, world);
                 }
             }
         }
 
         private float ApplyMountainAdjustment(float rawHeight, TWorld world)
         {
-            var seaLevelPercent = world.SeaLevel / (float)world.MaxElevation;
+            var seaLevelPercent = world.SeaLevel / world.MaxElevation;
 
             if (rawHeight < seaLevelPercent)
             {

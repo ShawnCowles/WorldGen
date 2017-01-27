@@ -123,11 +123,11 @@ namespace WorldGen.Generator
         /// <param name="maxElevation">The maximum altitude of the world.</param>
         /// <param name="seaLevel">The sea level altitude of the world.</param>
         /// <returns>The altitude category of the cell.</returns>
-        public static AltitudeCategory MapAltitudeToCategory(int altitude, int maxElevation, int seaLevel)
+        public static AltitudeCategory MapAltitudeToCategory(float altitude, float maxElevation, float seaLevel)
         {
-            var altPerc = altitude / (float)maxElevation;
+            var altPerc = altitude / maxElevation;
 
-            var seaLevelPercent = seaLevel / (float)maxElevation;
+            var seaLevelPercent = seaLevel / maxElevation;
 
             if(altitude < seaLevelPercent)
             {

@@ -8,6 +8,6 @@
         /// <summary>
         /// The height of the cell.
         /// </summary>
-        int Height { get; set; }
+        float Height { get; set; }
     }
 }

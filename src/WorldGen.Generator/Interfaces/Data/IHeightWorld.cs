@@ -8,11 +8,11 @@
         /// <summary>
         /// The maximum elevation of the world.
         /// </summary>
-        int MaxElevation { get; }
+        float MaxElevation { get; }
 
         /// <summary>
         /// The elevation of the surface of the sea.
         /// </summary>
-        int SeaLevel { get; }
+        float SeaLevel { get; }
     }
 }

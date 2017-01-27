@@ -49,7 +49,7 @@ namespace WorldGen.Generator.Generators
                 {
                     var noiseValue = 1 - (noiseMap[x, y] - 0.2f) * 1.25f;
 
-                    var percHeight = world.GetCell(x, y).Height / (float)world.MaxElevation;
+                    var percHeight = world.GetCell(x, y).Height / world.MaxElevation;
 
                     newHeightMap[x, y] = 0.7f * percHeight + 0.3f * noiseValue * (0.5f + percHeight / 2);
                 }
@@ -61,7 +61,7 @@ namespace WorldGen.Generator.Generators
             {
                 for(int y = 0; y < world.Height; y++)
                 {
-                    world.GetCell(x, y).Height = (int)(world.MaxElevation * newHeightMap[x, y]);
+                    world.GetCell(x, y).Height = world.MaxElevation * newHeightMap[x, y];
                 }
             }
         }
